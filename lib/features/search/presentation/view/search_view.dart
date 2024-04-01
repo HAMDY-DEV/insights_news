@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:insights_news/core/utils/colors.dart';
 import 'package:insights_news/core/utils/text_style.dart';
-import 'package:insights_news/features/home/presentation/widget/news_list_builder.dart';
 
 class SearchView extends StatefulWidget {
   const SearchView({super.key});
@@ -44,7 +43,7 @@ class _SearchViewState extends State<SearchView> {
               style: getSmallStyle(context, color: AppColoes.white),
             ),
             const Gap(7),
-            const Expanded(child: NewsListBuilder()),
+            
           ],
         ),
       ),

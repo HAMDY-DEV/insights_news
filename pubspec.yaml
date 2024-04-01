@@ -33,11 +33,13 @@ dependencies:
   cupertino_icons: ^1.0.6
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.1.5
   flutter_svg: ^2.0.10+1
   gap: ^3.0.1
   google_fonts: ^6.2.1
   hive: ^2.2.3
   hive_flutter: ^1.1.0
+  http: ^1.2.1
   image_picker: ^1.0.7
   smooth_page_indicator: ^1.1.0
 

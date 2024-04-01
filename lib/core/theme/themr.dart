@@ -52,7 +52,7 @@ class AppThemes {
         backgroundColor: AppColoes.darkBackground,
         dialBackgroundColor: AppColoes.darkBackground),
     colorScheme: ColorScheme.fromSeed(
-        primary: AppColoes.primary,       
+        primary: AppColoes.primary,
         background: AppColoes.darkBackground,
         //text
         onSurface: AppColoes.white,

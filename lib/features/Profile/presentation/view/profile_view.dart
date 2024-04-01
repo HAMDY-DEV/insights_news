@@ -34,24 +34,6 @@ class _ProfileViewState extends State<ProfileView> {
       appBar: AppBar(
         backgroundColor: AppColoes.darkBackground,
         foregroundColor: AppColoes.primary,
-        actions: [
-          Padding(
-              padding: const EdgeInsets.only(right: 10),
-              child: IconButton(
-                onPressed: () {
-                  themeMode =
-                      AppLocalStorage.gatCachData(key: 'darkMode') ?? true;
-                  setState(() {
-                    AppLocalStorage.cachData(
-                        key: 'darkMode', value: !themeMode);
-                  });
-                },
-                icon: Icon(
-                  themeMode == true ? Icons.sunny : Icons.dark_mode,
-                  color: AppColoes.primary,
-                ),
-              ))
-        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(15.0),

@@ -34,7 +34,10 @@ class _BbcNewsViewState extends State<BbcNewsView> {
               style: getSmallStyle(context, color: AppColoes.white),
             ),
             const Gap(7),
-            const Expanded(child: NewsListBuilder()),
+            const Expanded(
+                child: NewsListBuilder(
+              category: 'Business',
+            )),
           ],
         ),
       ),

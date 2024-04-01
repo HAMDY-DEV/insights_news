@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:insights_news/core/utils/colors.dart';
+import 'package:insights_news/features/home/presentation/view-model/news_cubit.dart';
 import 'package:insights_news/features/splash/presentation/view/splash_view.dart';
 
 Future<void> main() async {
@@ -14,34 +16,37 @@ class NewsApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: AppColoes.darkBackground,
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
+    return BlocProvider(
+      create: (context) => NewsCubit(),
+      child: MaterialApp(
+        theme: ThemeData(
+          bottomNavigationBarTheme: BottomNavigationBarThemeData(
+            type: BottomNavigationBarType.fixed,
+            backgroundColor: AppColoes.darkBackground,
+            showSelectedLabels: false,
+            showUnselectedLabels: false,
+          ),
+          scaffoldBackgroundColor: AppColoes.darkBackground,
+          inputDecorationTheme: InputDecorationTheme(
+            filled: true,
+            fillColor: AppColoes.colorList,
+            focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: BorderSide(color: AppColoes.colorList)),
+            enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: BorderSide(color: AppColoes.colorList)),
+            errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: BorderSide(color: AppColoes.red)),
+            focusedErrorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: BorderSide(color: AppColoes.red)),
+          ),
         ),
-        scaffoldBackgroundColor: AppColoes.darkBackground,
-        inputDecorationTheme: InputDecorationTheme(
-          filled: true,
-          fillColor: AppColoes.colorList,
-          focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15),
-              borderSide: BorderSide(color: AppColoes.colorList)),
-          enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15),
-              borderSide: BorderSide(color: AppColoes.colorList)),
-          errorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15),
-              borderSide: BorderSide(color: AppColoes.red)),
-          focusedErrorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15),
-              borderSide: BorderSide(color: AppColoes.red)),
-        ),
+        debugShowCheckedModeBanner: false,
+        home: const SplashView(),
       ),
-      debugShowCheckedModeBanner: false,
-      home: const SplashView(),
     );
   }
 }

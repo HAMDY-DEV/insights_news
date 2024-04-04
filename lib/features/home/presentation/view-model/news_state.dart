@@ -15,3 +15,17 @@ class NewsByCategoryErrorState extends NewsState {
   final String error;
   NewsByCategoryErrorState(this.error);
 }
+
+
+class NewsBySearchLoadingState extends NewsState {}
+
+class NewsBySearchSuccessState extends NewsState {
+  final NewsModel model;
+  NewsBySearchSuccessState(this.model);
+}
+
+class NewsBySearchErrorState extends NewsState {
+  final String error;
+  NewsBySearchErrorState(this.error);
+}
+ 

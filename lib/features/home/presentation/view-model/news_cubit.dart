@@ -15,4 +15,18 @@ class NewsCubit extends Cubit<NewsState> {
       NewsByCategoryErrorState(e.toString());
     }
   }
+
+  gatNewsBySearch({required String search}) {
+    emit(NewsBySearchLoadingState());
+    try {
+      ApiServices.gatNewsBySearch(query: search).then((value) {
+        emit(NewsBySearchSuccessState(value!));
+      });
+    } catch (e) {
+      NewsBySearchErrorState(e.toString());
+    }
+  }
 }
+
+
+

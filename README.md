@@ -19,6 +19,8 @@ samples, guidance on mobile development, and a full API reference.
 ![image](https://github.com/HAMDY-DEV/insights_news/assets/52404504/94b287f2-2b4a-49b7-8b0e-5f01c0dd9c56)
 ![image](https://github.com/HAMDY-DEV/insights_news/assets/52404504/8bdf67e0-cfb5-440c-bb2c-1a82fef78389)
 ![image](https://github.com/HAMDY-DEV/insights_news/assets/52404504/e1964976-3c7a-41bf-bc0b-12be1ad4bc50)
+![image](https://github.com/HAMDY-DEV/insights_news/assets/52404504/097f0814-8fa9-4742-85ca-c930ce93dee1)
+![image](https://github.com/HAMDY-DEV/insights_news/assets/52404504/404a1c98-08a7-447a-a291-200306e1b323)
 
 
 

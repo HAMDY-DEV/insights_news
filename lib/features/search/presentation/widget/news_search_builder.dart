@@ -8,21 +8,21 @@ import 'package:insights_news/features/home/presentation/view-model/news_cubit.d
 import 'package:insights_news/features/home/presentation/view-model/news_state.dart';
 import 'package:insights_news/features/news_detail/presentation/view/news_detail.dart';
 
-class NewsListBuilder extends StatefulWidget {
-  const NewsListBuilder({
+class NewsSearchBuilder extends StatefulWidget {
+  const NewsSearchBuilder({
     super.key,
-    required this.category,
+    required this.query,
   });
-  final String category;
+  final String query;
 
   @override
-  State<NewsListBuilder> createState() => _NewsListBuilderState();
+  State<NewsSearchBuilder> createState() => _NewsSearchBuilderState();
 }
 
-class _NewsListBuilderState extends State<NewsListBuilder> {
+class _NewsSearchBuilderState extends State<NewsSearchBuilder> {
   @override
   void initState() {
-    context.read<NewsCubit>().gatNewsByCategory(category: widget.category);
+    context.read<NewsCubit>().gatNewsBySearch(search: widget.query);
     super.initState();
   }
 
@@ -30,7 +30,7 @@ class _NewsListBuilderState extends State<NewsListBuilder> {
   Widget build(BuildContext context) {
     return BlocBuilder<NewsCubit, NewsState>(
       builder: (context, state) {
-        if (state is NewsByCategorySuccessState) {
+        if (state is NewsBySearchSuccessState) {
           var news = state.model.articles;
           return ListView.builder(
             itemCount: news?.length,
@@ -107,7 +107,7 @@ class _NewsListBuilderState extends State<NewsListBuilder> {
               );
             },
           );
-        } else if (state is NewsByCategoryErrorState) {
+        } else if (state is NewsBySearchErrorState) {
           return const Center(child: Text('Error'));
         } else {
           return const Center(

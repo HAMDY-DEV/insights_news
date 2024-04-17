@@ -19,7 +19,7 @@ class _NavBarWidgetState extends State<NavBarWidget> {
 
   List<Widget> view = [
     const HomeView(),
-     SearchView(),
+    SearchView(),
     const SourceView(),
     const ProfileView(),
   ];

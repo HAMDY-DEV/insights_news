@@ -26,7 +26,25 @@ class NewsCubit extends Cubit<NewsState> {
       NewsBySearchErrorState(e.toString());
     }
   }
+
+  gatNewsBySource() {
+    emit(NewsBySourceLoadingState());
+    try {
+      ApiServices.gatNewsBySource().then((value) {
+        emit(NewsBySourceSuccessState(value!));
+      });
+    } catch (e) {
+      NewsBySourceErrorState(e.toString());
+    }
+  }
+
+  getSourceNews({required String sourceId}) {
+    emit(NewsSourceLoadingState());
+    try {
+      ApiServices.gatSourceNews(sourceId: sourceId)
+          .then((value) => {emit(NewsSourceSuccessState(value!))});
+    } catch (e) {
+      emit(NewsSourceErrorState(e.toString()));
+    }
+  }
 }
-
-
-

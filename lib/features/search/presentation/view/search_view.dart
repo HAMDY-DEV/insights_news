@@ -6,6 +6,7 @@ import 'package:insights_news/core/utils/text_style.dart';
 import 'package:insights_news/features/home/presentation/view-model/news_cubit.dart';
 import 'package:insights_news/features/search/presentation/widget/news_search_builder.dart';
 
+// ignore: must_be_immutable
 class SearchView extends StatelessWidget {
   SearchView({super.key});
 

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 import 'package:insights_news/core/services/api_services.dart';
 import 'package:insights_news/core/utils/colors.dart';
 import 'package:insights_news/core/utils/text_style.dart';
-import 'package:insights_news/features/search/presentation/widget/news_search_builder.dart';
 import 'package:insights_news/features/source/presentation/widget/news_source_builder.dart';
 
 class SourceView extends StatefulWidget {

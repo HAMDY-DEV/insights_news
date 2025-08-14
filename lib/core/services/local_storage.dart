@@ -7,7 +7,7 @@ class AppLocalStorage {
     box.put(key, value);
   }
 
-  static gatCachData({key}) {
+  static dynamic gatCachData({key}) {
     return box.get(key);
   }
 }

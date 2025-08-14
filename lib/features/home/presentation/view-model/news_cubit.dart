@@ -5,7 +5,7 @@ import 'package:insights_news/features/home/presentation/view-model/news_state.d
 class NewsCubit extends Cubit<NewsState> {
   NewsCubit() : super(NewsInitialState());
 
-  gatNewsByCategory({required String category}) {
+  void gatNewsByCategory({required String category}) {
     emit(NewsByCategoryLoadingState());
     try {
       ApiServices.gatNewsByCategory(category: category).then((value) {
@@ -16,7 +16,7 @@ class NewsCubit extends Cubit<NewsState> {
     }
   }
 
-  gatNewsBySearch({required String search}) {
+  void gatNewsBySearch({required String search}) {
     emit(NewsBySearchLoadingState());
     try {
       ApiServices.gatNewsBySearch(query: search).then((value) {
@@ -27,7 +27,7 @@ class NewsCubit extends Cubit<NewsState> {
     }
   }
 
-  gatNewsBySource() {
+  void gatNewsBySource() {
     emit(NewsBySourceLoadingState());
     try {
       ApiServices.gatNewsBySource().then((value) {
@@ -38,7 +38,7 @@ class NewsCubit extends Cubit<NewsState> {
     }
   }
 
-  getSourceNews({required String sourceId}) {
+  void getSourceNews({required String sourceId}) {
     emit(NewsSourceLoadingState());
     try {
       ApiServices.gatSourceNews(sourceId: sourceId)

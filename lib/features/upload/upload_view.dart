@@ -9,7 +9,7 @@ import 'package:insights_news/core/utils/assets_images.dart';
 import 'package:insights_news/core/utils/colors.dart';
 import 'package:insights_news/core/utils/text_style.dart';
 import 'package:insights_news/core/widgets/custom_button.dart';
-import 'package:insights_news/features/home/presentation/view/home-view.dart';
+import 'package:insights_news/core/widgets/nav_bar_widget.dart';
 
 class UploadView extends StatefulWidget {
   const UploadView({super.key});
@@ -42,7 +42,7 @@ class _UploadViewState extends State<UploadView> {
                   AppLocalStorage.cachData(key: 'name', value: name);
                   AppLocalStorage.cachData(key: 'image', value: path);
                   AppLocalStorage.cachData(key: 'isUpload', value: true);
-                  navigatorToReplacement(context, const HomeView());
+                  navigatorToReplacement(context, NavBarWidget());
                 }
               },
               child: Text(
